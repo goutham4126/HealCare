@@ -18,8 +18,8 @@ function Sidebar() {
         icon:<MdOutlineVideoCall className="h-6 w-6"/>,
     },  
     {
-        path:'/appoint',
-        name:'Appointment',
+        path:'/schedule',
+        name:'Scheduler',
         icon:<MdOutlineBookmarks className="h-6 w-6"/>
     },
     {
@@ -34,12 +34,12 @@ function Sidebar() {
               {
                   links.map((link,index)=>
                   <div key={index}>
-                    <Link href={link.path} className="flex items-center gap-2 bg-teal-500 text-white font-semibold"><span className="p-3">{link.icon}</span>
+                    <Link href={link.path} className="flex items-center gap-2 bg-teal-500 rounded-md text-white font-semibold"><span className="p-3">{link.icon}</span>
                     <span>{link.name}</span></Link>
                   </div>)
               }
         </div>
-        <div className="mb-14 bg-teal-500 text-center text-white font-semibold p-2 m-2">
+        <div className="mb-14 bg-teal-500 text-center text-white rounded-md font-semibold p-2 m-2">
           <p>Logout</p>
         </div>
       </div>
