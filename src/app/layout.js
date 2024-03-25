@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
             <Navbar/>
           </div>
           <div className="flex">
-            <div className="bg-white w-60 mt-12 h-screen fixed shadow-md">
+            <div className="bg-white w-56 mt-12 h-screen fixed shadow-md hidden lg:block">
               <Sidebar/>
             </div>
-            <div className="ml-60 w-full">
+            <div className="lg:ml-56 w-full">
               <div className="mt-12">
                 {children}
               </div>

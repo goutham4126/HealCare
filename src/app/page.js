@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Page = () => {
     const [userLocation, setUserLocation] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const sellerAddress = "hospital near me";
         
     useEffect(() => {
@@ -12,24 +12,22 @@ const Page = () => {
                 (position) => {
                     const { latitude, longitude } = position.coords;
                     setUserLocation({ latitude, longitude });
-                    setLoading(false);
+                    // setLoading(false);
                 },
                 (error) => {
                     console.error('Error getting location:', error);
-                    setLoading(false);
+                    // setLoading(false);
                 }
             );
         } else {
             console.error('Geolocation is not supported by your browser.');
-            setLoading(false);
+            // setLoading(false);
         }
     }, []);
 
     return (
-        <div className="bg-orange-100">
-                    {loading ? (
-                        <p>Loading...</p>
-                    ) : userLocation ? (
+        <div>
+                    { userLocation ? (
                         <>
                             <iframe
                                 width="100%"
@@ -46,7 +44,9 @@ const Page = () => {
                             ></iframe>
                         </>
                     ) : (
-                        <p>Error getting user location.</p>
+                        <div className="flex justify-center h-screen items-center mb-12">
+                            <img class="w-10 h-10 animate-spin" src="https://www.svgrepo.com/show/491270/loading-spinner.svg" alt="Loading icon"/>
+                        </div>
                     )}
             </div>
     );
