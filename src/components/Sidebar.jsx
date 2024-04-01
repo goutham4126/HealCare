@@ -1,31 +1,32 @@
 import React from 'react'
 import Link from 'next/link'
-import { MdOutlineAddHome } from "react-icons/md";
-import { MdOutlineVideoCall } from "react-icons/md";
-import { MdOutlineBookmarks } from "react-icons/md";
-import { LiaPrescriptionBottleAltSolid } from "react-icons/lia";
+import { HiHome } from "react-icons/hi2";
+import { FaVideo } from "react-icons/fa6";
+import { MdOutlineSchedule } from "react-icons/md";
+import { FaPrescriptionBottleMedical } from "react-icons/fa6";
+
 
 function Sidebar() {
   const links=[
     {
         path:'/',
         name:'Home',
-        icon:<MdOutlineAddHome className="h-6 w-6"/>,
+        icon:<HiHome className="h-6 w-6"/>,
     },
     {
-        path:'https://healcare-videochat.vercel.app/',
+        path:'https://200h323s3236cxkluds3455ukjxnj34467t4732-healcare-videochat.vercel.app/create',
         name:'Video',
-        icon:<MdOutlineVideoCall className="h-6 w-6"/>,
+        icon:<FaVideo className="h-6 w-6"/>,
     },  
     {
         path:'/schedule',
         name:'Scheduler',
-        icon:<MdOutlineBookmarks className="h-6 w-6"/>
+        icon:<MdOutlineSchedule className="h-6 w-6"/>
     },
     {
         path:'/prescription',
         name:'Prescription',
-        icon:<LiaPrescriptionBottleAltSolid className="h-6 w-6"/>
+        icon:<FaPrescriptionBottleMedical className="h-6 w-6"/>
     }
   ]
   return (
