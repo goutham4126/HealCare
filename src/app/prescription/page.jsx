@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata={
-  default:"Prescription"
+  title:"Prescription"
 }
 
 function page() {

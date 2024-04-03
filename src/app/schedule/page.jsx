@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata={
-   default:"Schedule"
+   title:"Schedule"
 }
 
 function page() {

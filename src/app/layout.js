@@ -7,12 +7,13 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: {
+  title:{
     default:"HealCare",
-    
+    template:"%s | HealCare"
   },
+  description:"The power of doctors",
   icons:{
-    icon:""
+    icon:"https://i.postimg.cc/5t0SkVcf/logo-removebg-preview.png"
   }
 };
 
