@@ -7,8 +7,13 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "HealCare",
-  description: "The power of doctors",
+  title: {
+    default:"HealCare",
+    
+  },
+  icons:{
+    icon:""
+  }
 };
 
 export default function RootLayout({ children }) {
