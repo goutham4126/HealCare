@@ -1,12 +1,10 @@
 "use client"
 import { useState } from "react";
 import OpenAI from "openai";
-
-const openai = new OpenAI({
-    apiKey: "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",
-    dangerouslyAllowBrowser: true,
-});
-
+export const openai = new OpenAI({
+        apiKey:process.env.OPENAI_API_KEY,
+        dangerouslyAllowBrowser: true,
+})
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
     const [chatHistory, setChatHistory] = useState([]);
@@ -40,11 +38,11 @@ export default function Chatbot() {
                         <div key={index} className="text-gray-500">
                             <div>
                                 {
-                                  message.role === 'user' ? <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png" alt="#" className="h-7 w-7 rounded-full"/> : 
-                                  <img src="https://static.vecteezy.com/system/resources/previews/026/530/105/original/customer-support-icon-chat-support-help-vector.jpg" alt="#" className="h-8 w-8 rounded-full"/>
+                                  message.role === 'user' ? <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png" alt="#" className="h-6 w-6 rounded-full"/> : 
+                                  <img src="https://t3.ftcdn.net/jpg/03/22/38/32/360_F_322383277_xcXz1I9vOFtdk7plhsRQyjODj08iNSwB.jpg" alt="#" className="h-8 w-8 rounded-full"/>
                                 }
                             </div>
-                            <div className="bg-white p-1 rounded-md">
+                            <div className={`${message.role === 'user' ?"bg-neutral-200 p-2 mb-1 mt-1":"bg-neutral-200 p-2 mb-1"} rounded-md font-extralight`}>
                                 {message.content}
                             </div>  
                         </div>
