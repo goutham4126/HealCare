@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 const Page = () => {
     const [userLocation, setUserLocation] = useState(null);
     const [loading, setLoading] = useState(true);
-        
     useEffect(() => {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(
