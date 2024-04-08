@@ -42,6 +42,7 @@ const Page = () => {
                 ></iframe>
             )}
             <Homepage/>
+            <h1>Remaining content goes here</h1>
         </div>
     );
 }
