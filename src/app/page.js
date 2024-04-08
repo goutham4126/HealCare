@@ -38,7 +38,7 @@ const Page = () => {
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/directions?key=AIzaSyCAYhOv9bpaK9lPFyTNxDoaeUbDXOUDvec&origin=${userLocation.latitude},${userLocation.longitude}&destination=hospital`}
+                    src={`https://www.google.com/maps/embed/v1/directions?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}&origin=${userLocation.latitude},${userLocation.longitude}&destination=hospital`}
                 ></iframe>
             )}
             <Homepage/>
