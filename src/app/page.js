@@ -1,4 +1,5 @@
 "use client"
+import Homepage from '@/components/Homepage';
 import React, { useEffect, useState } from 'react';
 
 const Page = () => {
@@ -40,6 +41,7 @@ const Page = () => {
                     src={`https://www.google.com/maps/embed/v1/directions?key=AIzaSyCAYhOv9bpaK9lPFyTNxDoaeUbDXOUDvec&origin=${userLocation.latitude},${userLocation.longitude}&destination=hospital`}
                 ></iframe>
             )}
+            <Homepage/>
         </div>
     );
 }

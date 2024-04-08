@@ -1,10 +1,10 @@
 "use client"
 import { useState } from "react";
 import OpenAI from "openai";
-export const openai = new OpenAI({
-        apiKey:process.env.OPENAI_API_KEY,
+    export const openai = new OpenAI({ 
+        apiKey: "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",
         dangerouslyAllowBrowser: true,
-})
+    })
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
     const [chatHistory, setChatHistory] = useState([]);
@@ -14,18 +14,24 @@ export default function Chatbot() {
             ...prevChat, { role: 'user', content: userInput },
         ]);
         setUserInput('');
-        const chatCompletion = await openai.chat.completions.create({
-            messages: [...chatHistory, { role: 'assistant', content: `I am suffering from ${userInput}.Give me food and exercises to overcome this disease in less than 10 sentences.` }],
-            model: 'gpt-3.5-turbo',
-        });
+        try{
+            const chatCompletion = await openai.chat.completions.create({
+                messages: [...chatHistory, { role: 'assistant', content: `I am suffering from ${userInput}.Give me food and exercises to overcome this disease in less than 10 sentences.` }],
+                model: 'gpt-3.5-turbo',
+            });
 
-        setChatHistory(prevChat => [
-            ...prevChat,
-            {
-                role: 'assistant',
-                content: chatCompletion.choices[0].message.content
-            }
-        ]);
+            setChatHistory(prevChat => [
+                ...prevChat,
+                {
+                    role: 'assistant',
+                    content: chatCompletion.choices[0].message.content
+                }
+            ]);
+        }
+        catch(err)
+        {
+            console.log(err)
+        }
     };
 
     return (
@@ -42,7 +48,7 @@ export default function Chatbot() {
                                   <img src="https://t3.ftcdn.net/jpg/03/22/38/32/360_F_322383277_xcXz1I9vOFtdk7plhsRQyjODj08iNSwB.jpg" alt="#" className="h-8 w-8 rounded-full"/>
                                 }
                             </div>
-                            <div className={`${message.role === 'user' ?"bg-neutral-200 p-2 mb-1 mt-1":"bg-neutral-200 p-2 mb-1"} rounded-md font-extralight`}>
+                            <div className={`${message.role === 'user' ?"p-2 mb-1 mt-1":"p-2 mb-1"} rounded-md font-extralight`}>
                                 {message.content}
                             </div>  
                         </div>
