@@ -1,6 +1,8 @@
 "use client"
 import Homepage from '@/components/Homepage';
 import React, { useEffect, useState } from 'react';
+import Articles from '@/components/Articles';
+import Carousel from '@/components/Carousel';
 
 const Page = () => {
     const [userLocation, setUserLocation] = useState(null);
@@ -41,8 +43,9 @@ const Page = () => {
                     src={`https://www.google.com/maps/embed/v1/directions?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}&origin=${userLocation.latitude},${userLocation.longitude}&destination=hospital`}
                 ></iframe>
             )}
+            <Carousel/>
             <Homepage/>
-            <h1>Remaining content goes here</h1>
+            <Articles/>
         </div>
     );
 }

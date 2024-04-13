@@ -53,11 +53,11 @@ function Homepage() {
         },
     ]
   return (
-        <div className="mt-2">
+        <div className="mt-2 mb-5">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 leading-8">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-600">25+ specialities</h1>
-                    <p className="text-gray-500 text-sm">Consult top doctors across specialities</p>
+                    <p className="text-gray-500 text-sm font-semibold">Consult top doctors across specialities</p>
                 </div>
                 <div>
                     <button className="border px-3 py-2 font-semibold text-sm rounded-lg mt-2">See all Specialities</button>

@@ -20,7 +20,7 @@ function page() {
                     <p className="text-sm text-gray-400 leading-10">A verification code will be sent to this number.</p>
                     <button className="border-2 p-2 mt-4 rounded-lg text-sm">Continue</button>
                 </div>
-                <div className="flex flex-col justify-center bg-teal-500 hidden md:block">
+                <div className="md:flex md:flex-col justify-center bg-teal-500 hidden">
                     <img src="https://i.postimg.cc/KjLSMKNH/wepik-export-2024040815245907-Pn-removebg-preview.png" alt="" className="w-full h-72"/>
                 </div>
                 <div className="absolute right-16 p-2 hidden md:block" onClick={Move}>

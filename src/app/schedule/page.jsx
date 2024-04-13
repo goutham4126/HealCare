@@ -6,7 +6,9 @@ export const metadata={
 
 function page() {
   return (
-    <div>page</div>
+    <div>
+      This page is under construction
+    </div>
   )
 }
 

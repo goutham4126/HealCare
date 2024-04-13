@@ -10,7 +10,10 @@ const nextConfig = {
       "raw.githubusercontent.com",
       "images.pexels.com",
       "images.unsplash.com",
-      'marketplace.canva.com'
+      'marketplace.canva.com',
+      "nypost.com",
+      "cdn-ciobl.nitrocdn.com",
+      "www.savinadental.com"
     ],
   },
 };
