@@ -13,7 +13,7 @@ function Sidebar() {
   const {data:session}=useSession()
   const router=useRouter()
   const handleSignOut = () => {
-    signOut(); 
+    signOut({ callbackUrl: '/' }); 
   };
   const handleSignin = () => {
      router.push("/login")

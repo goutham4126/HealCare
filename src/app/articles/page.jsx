@@ -2,7 +2,7 @@
 import { AiOutlineLike } from "react-icons/ai";
 import Image from 'next/image'
 import Link from "next/link"
-import WhatsAppButton from "@/components/share";
+import WhatsAppButton from "@/components/Share";
 
 function page() {
     const arr=[
