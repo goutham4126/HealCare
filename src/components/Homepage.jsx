@@ -1,7 +1,8 @@
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import {  FaAngleRight } from "react-icons/fa"
+import { useSession } from "next-auth/react";
 function Homepage() {
-
+    const {data:session}=useSession();
     const specialities=[
         {
             image:"https://www.practo.com/consult/static/images/top-speciality-gynaecologist.svg",
@@ -70,7 +71,7 @@ function Homepage() {
                                 <img src={item.image} alt="" className="rounded-full h-32 w-32 m-auto mb-4" />
                                 <p className="font-semibold">{item.disease}</p>
                                 <p className="text-neutral-600 font-semibold"><FaIndianRupeeSign className="inline h-3.5"/>{item.cost}</p>
-                                <a href={item.link} className="text-cyan-500 font-semibold">Consult now < FaAngleRight className="inline h-4"/></a>
+                                <a href={session?item.link:"/login"} className="text-cyan-500 font-semibold">Consult now < FaAngleRight className="inline h-4"/></a>
                         </div>
                     ))
                 }

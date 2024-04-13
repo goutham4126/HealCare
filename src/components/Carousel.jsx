@@ -1,9 +1,10 @@
 
 
 function Carousel() {
+
   return (
     <div className="m-3">
-        carousel comes here
+        Carousel comes here
     </div>
    
 )

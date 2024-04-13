@@ -51,8 +51,15 @@ function Sidebar() {
               {
                   links.map((link,index)=>
                   <div key={index}>
-                    <Link href={link.path} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
-                    <span>{link.name}</span></Link>
+                    {
+                      link.path==="/"?
+                      <Link href={link.path} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
+                        <span>{link.name}</span>
+                      </Link>:
+                      <Link href={session?link.path:"/login"} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
+                        <span>{link.name}</span>
+                      </Link>
+                    }
                   </div>)
               }
         </div>
