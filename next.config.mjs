@@ -13,7 +13,8 @@ const nextConfig = {
       'marketplace.canva.com',
       "nypost.com",
       "cdn-ciobl.nitrocdn.com",
-      "www.savinadental.com"
+      "www.savinadental.com",
+      "encrypted-tbn0.gstatic.com"
     ],
   },
 };

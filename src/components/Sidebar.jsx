@@ -1,13 +1,23 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
+import { signOut,useSession } from 'next-auth/react';
 import { HiHome } from "react-icons/hi2";
 import { FaVideo } from "react-icons/fa6";
 import { MdOutlineSchedule } from "react-icons/md";
 import { FaPrescriptionBottleMedical } from "react-icons/fa6";
 import { usePathname } from 'next/navigation';
+import { useRouter} from 'next/navigation';
 
 function Sidebar() {
+  const {data:session}=useSession()
+  const router=useRouter()
+  const handleSignOut = () => {
+    signOut(); 
+  };
+  const handleSignin = () => {
+     router.push("/login")
+  };
   const pathname=usePathname();
   const links=[
     {
@@ -46,9 +56,16 @@ function Sidebar() {
                   </div>)
               }
         </div>
-        <div className="mb-14 bg-teal-500 text-center text-white rounded-md font-semibold p-2 m-2">
-          <p>Logout</p>
-        </div>
+
+          {
+            session?
+            <div onClick={handleSignOut} className=" cursor-pointer mb-14 bg-teal-500 text-center text-white rounded-md font-semibold p-2 m-2">
+              Logout
+            </div>
+            :<div onClick={handleSignin} className=" cursor-pointer mb-14 bg-teal-500 text-center text-white rounded-md font-semibold p-2 m-2">
+              Login/Signin
+            </div>
+          }
       </div>
   )
 }

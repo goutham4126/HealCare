@@ -4,8 +4,10 @@ import React from 'react'
 import Link from 'next/link';
 import { useState } from 'react';
 import { FiMenu } from "react-icons/fi";
+import { useSession } from 'next-auth/react';
 
 function Navbar() {
+  const {data:session}=useSession()
   const [open,setOpen]=useState(false);
   const Menu=()=>{
     setOpen(prev=>!prev)
@@ -16,7 +18,7 @@ function Navbar() {
            <Link className="font-bold text-teal-600" href="/">HC</Link>
         </div>
         <div className="flex items-center gap-3">
-           <Image src="https://marketplace.canva.com/EAFHfL_zPBk/1/0/1600w/canva-yellow-inspiration-modern-instagram-profile-picture-kpZhUIzCx_w.jpg" height="35" alt="" width="35" className="rounded-full"/>
+           {session&&<Image src={session?.user?.image} height="35" alt="" width="35" className="rounded-full"/>}
            <FiMenu className="w-7 h-7 text-teal-600 hidden sm:block lg:hidden" onClick={Menu}/>
            {
               open&&

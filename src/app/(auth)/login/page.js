@@ -1,0 +1,42 @@
+"use client"
+import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { login } from "@/utils/loginAction";
+import { FcGoogle } from "react-icons/fc";
+import { BsGithub } from "react-icons/bs";
+
+function Login() {
+  const handleLogin = async (provider) => {
+    await signIn(provider, { callbackUrl: '/' });
+  };
+
+  return (
+    <div className="bg-slate-200 h-screen flex justify-center items-center">
+    <div className="bg-white m-auto items-center w-96 rounded-lg p-4">
+      <div>
+        <form className="flex flex-col gap-3" action={login}>
+        <input type="text" placeholder="username" name="username" className="border border-slate-300 p-2.5 outline-none rounded-lg"/>
+        <input type="password" placeholder="password" name="password" className="border border-slate-300 p-2.5 outline-none rounded-lg"/>
+        <button className="bg-red-500 text-white p-2.5 text-sm rounded-lg font-semibold">Login</button>
+        </form>
+      </div> 
+      <div className="mt-3  flex justify-around items-center">
+        <div className="w-[40%] border-t border-slate-400"><hr/></div>
+        <div className="text-slate-400">or</div>
+        <div className="w-[40%] border-t border-slate-400"><hr/></div>
+      </div>
+      <div className="border border-slate-300 my-3 p-3 text-sm rounded-lg font-semibold ">
+        <button onClick={()=>handleLogin("google")} className="flex items-center w-full justify-center"><FcGoogle className="h-6 w-6 mr-5"/>Sign in with Google</button>
+      </div>
+      <div className="bg-black text-white my-3 p-3.5 text-sm rounded-lg font-semibold">
+        <button onClick={()=>handleLogin("github")} className="flex items-center w-full justify-center"><BsGithub className="h-5 w-5 mr-5"/>Sign in with GitHub</button>
+      </div>
+      <div className="text-center text-sm font-semibold">
+        Don&apos;t have an account? <Link href="/register" className="text-blue-500">Register</Link>
+      </div>
+    </div>
+</div>
+  );
+}
+
+export default Login;
