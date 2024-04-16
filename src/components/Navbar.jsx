@@ -70,10 +70,10 @@ function Navbar() {
                         <div key={index}>
                           {
                             link.path==="/"?
-                            <Link href={link.path} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
+                            <Link href={link.path} onClick={Menu} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
                               <span>{link.name}</span>
                             </Link>:
-                            <Link href={session?link.path:"/login"} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
+                            <Link href={session?link.path:"/login"} onClick={Menu} className={`${link.isActive?"text-teal-500 bg-white border-2 border-teal-500": "bg-teal-500 text-white"} flex items-center gap-2 rounded-md font-semibold`}><span className="p-3">{link.icon}</span>
                               <span>{link.name}</span>
                             </Link>
                           }
