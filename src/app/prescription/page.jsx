@@ -4,7 +4,7 @@ import OpenAI from "openai";
 
 export const openai = new OpenAI({ 
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true,  
+    dangerouslyAllowBrowser: true,
 })
 export default function Chatbot() {
     const [userInput, setUserInput] = useState('');
@@ -63,13 +63,3 @@ export default function Chatbot() {
         </div>
     );
 }
-
-// import React from 'react'
-
-// function page() {
-//   return (
-//     <div>page</div>
-//   )
-// }
-
-// export default page
