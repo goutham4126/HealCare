@@ -17,7 +17,7 @@ export default function Chatbot() {
         setUserInput('');
         try{
             const chatCompletion = await openai.chat.completions.create({
-                messages: [...chatHistory, { role: 'assistant', content: `I am suffering from ${userInput}.Give me food and exercises to overcome this disease in less than 10 sentences.` }],
+                messages: [...chatHistory, { role: 'assistant', content: `I am suffering from ${userInput}.Give me food and exercises to overcome that disease in less than 10 sentences.` }],
                 model: 'gpt-3.5-turbo',
             });
 
