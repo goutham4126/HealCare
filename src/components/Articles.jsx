@@ -10,7 +10,7 @@ function Articles() {
     }
   return (
     <div className="grid grid-cols-1 sm:flex sm:justify-center p-3 gap-5 sm:gap-12 items-center pt-6 border-t-2 pb-6">
-        <div className="w-80">
+        <div className="sm:w-80">
           <h1 className="text-2xl font-bold mb-3">Read top articles from health experts</h1>
           <p className="text-sm font-semibold text-slate-500 mb-3">Health articles that keep you informed about good health practices and achieve your goals.</p>
           <button onClick={()=>Articles()} className="px-5 py-3 rounded-md text-sm font-semibold bg-sky-500 text-white">See all Articles</button>
