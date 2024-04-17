@@ -11,8 +11,8 @@ function Login() {
   };
 
   return (
-  <div className="h-[90vh] flex justify-center items-center">
-    <div className="bg-white m-auto items-center w-96  rounded-lg p-4" style={{boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
+  <div className="h-[85vh] sm:h-[90vh] flex justify-center items-center">
+    <div className="bg-white m-auto items-center w-96 mx-2 rounded-lg p-4" style={{boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
       <div>
         <form className="flex flex-col gap-3" action={login}>
         <input type="text" placeholder="username" name="username" className="border border-slate-300 p-2.5 outline-none rounded-lg"/>
