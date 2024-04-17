@@ -11,7 +11,8 @@ function Login() {
   };
 
   return (
-    <div className="bg-white m-auto items-center w-72 sm:w-96 mt-24 sm:mt-32 rounded-lg p-4" style={{boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
+  <div className="h-[90vh] flex justify-center items-center">
+    <div className="bg-white m-auto items-center w-96  rounded-lg p-4" style={{boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
       <div>
         <form className="flex flex-col gap-3" action={login}>
         <input type="text" placeholder="username" name="username" className="border border-slate-300 p-2.5 outline-none rounded-lg"/>
@@ -34,6 +35,7 @@ function Login() {
         Don&apos;t have an account? <Link href="/register" className="text-blue-500">Register</Link>
       </div>
     </div>
+  </div>
   );
 }
 
