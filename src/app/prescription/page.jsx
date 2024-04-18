@@ -40,7 +40,7 @@ export default function Chatbot() {
     };
 
     return (
-        <div className="w-[95%] sm:w-[70vw] lg:w-[35vw] m-auto bg-teal-400 rounded-xl" style={{marginTop:80,boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
+        <div className="w-[95%] sm:w-[70vw] lg:w-[35vw] m-auto bg-teal-500 rounded-xl" style={{marginTop:80,boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"}}>
             <div onClick={()=>setChatHistory([])}className="flex justify-between p-3">
                 <h1 className="font-semibold">HealCare</h1>
                 <h1><IoMdRefresh className="h-6 w-6"/></h1>
@@ -52,10 +52,10 @@ export default function Chatbot() {
                             <div>
                                 {
                                   message.role === 'user' ? <img src={session.user.image} alt="#" className="h-7 w-7 rounded-full"/> : 
-                                  <img src="https://miro.medium.com/v2/resize:fit:962/1*I9KrlBSL9cZmpQU3T2nq-A.jpeg" alt="#" className="h-7 w-7 rounded-full border border-teal-400 p-1"/>
+                                  <img src="https://miro.medium.com/v2/resize:fit:962/1*I9KrlBSL9cZmpQU3T2nq-A.jpeg" alt="#" className="h-7 w-7 rounded-full border border-teal-500 p-1"/>
                                 }
                             </div>
-                            <div className={`${message.role === 'user' ?"my-1.5 bg-slate-200 p-2":"p-2 bg-neutral-200 my-1.5"} rounded-md`}>
+                            <div className={`${message.role === 'user' ?"bg-slate-200":"bg-neutral-200"} rounded-md text-sm font-medium p-2 my-1.5`}>
                                 {message.content}
                             </div>  
                         </div>
@@ -63,8 +63,8 @@ export default function Chatbot() {
                 }
             </div>
             <div className="flex justify-center p-2">
-                    <input type="text" className="p-2 w-full outline-none rounded-s-md" value={userInput} onChange={(e) => setUserInput(e.target.value)} />
-                    <button onClick={handleUserInput} className="text-teal-400 bg-white p-2 rounded-e-md"><FaSearch className="h-6 w-5"/></button>
+                    <input type="text" className="p-2 w-full outline-none rounded-s-md text-sm font-medium" value={userInput} onChange={(e) => setUserInput(e.target.value)} placeholder="Enter your disease here"/>
+                    <button onClick={handleUserInput} className="text-teal-500 bg-white p-2 rounded-e-md"><FaSearch className="h-6 w-5"/></button>
             </div>
         </div>
         

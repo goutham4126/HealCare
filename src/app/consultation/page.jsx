@@ -8,28 +8,34 @@ function page() {
         router.push("/")
     }
   return (
-    <div className="h-[90vh] p-16">
-        <div className="flex justify-center">
-            <div className="flex justify-between h-96 w-full" style={{boxShadow:"0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18)"}}>
-                <div className="p-3 pl-10">
-                    <h1 className="text-2xl font-medium leading-10 mt-3">Consult with a Doctor</h1>
-                    <p className="leading-6">Tell us your symptom or health problem</p>
-                    <input type="text" className="border outline-none p-3 rounded-md w-full mt-2" placeholder="Eg:fever,headache.."/>
-                    <p className="leading-10">Mobile number</p>
-                    <input type="number" className="border outline-none p-3 rounded-md w-full"/>
-                    <p className="text-sm text-gray-400 leading-10">A verification code will be sent to this number.</p>
-                    <button className="border-2 p-2 mt-4 rounded-lg text-sm">Continue</button>
-                </div>
-                <div className="md:flex md:flex-col justify-center bg-teal-500 hidden">
-                    <img src="https://i.postimg.cc/KjLSMKNH/wepik-export-2024040815245907-Pn-removebg-preview.png" alt="" className="w-full h-72"/>
-                </div>
-                <div className="absolute right-16 p-2 hidden md:block" onClick={Move}>
-                    <RxCross2 className="relative h-6 w-6"/>
+        <div className="p-2 md:p-16 flex justify-center items-center min-h-screen">
+            <div className="max-w-lg w-full">
+                <div className="bg-gray-100 rounded-lg shadow-xl p-4">
+                        <div className="flex justify-between items-center cursor-pointer text-gray-600 mb-3" onClick={Move}>
+                            <h1 className="text-2xl font-medium leading-10">Consult with a Doctor</h1>
+                            <RxCross2 className="text-red-600 h-6 w-6"/>
+                        </div>
+                        <form>
+                            <div className="mb-4">
+                                <label htmlFor="symptom" className="block text-sm font-medium text-gray-700 mb-1">Symptom or Health Problem</label>
+                                <input type="text" id="symptom" className="border-2 outline-none p-3 rounded-md w-full"/>
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
+                                <input type="tel" id="mobile" className="border-2 outline-none p-3 rounded-md w-full"/>
+                                <p className="text-sm text-gray-400 mt-1">A verification code will be sent to this number.</p>
+                            </div>
+                            <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-sm transition-colors duration-300">Continue</button>
+                        </form>
                 </div>
             </div>
-        </div> 
-    </div>    
+        </div>
   )
 }
 
 export default page
+
+
+{/* <div className="md:flex md:flex-col justify-center bg-teal-500 hidden">
+<img src="https://i.postimg.cc/KjLSMKNH/wepik-export-2024040815245907-Pn-removebg-preview.png" alt="" className="w-full h-72"/>
+</div> */}
