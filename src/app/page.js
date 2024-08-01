@@ -11,7 +11,7 @@ const Page = () => {
           try {
             console.log("Loading OneSignal SDK...");
             await OneSignal.init({
-              appId: process.env.ONE_SIGNAL,
+              appId: process.env.NEXT_PUBLIC_ONE_SIGNAL,
               allowLocalhostAsSecureOrigin: true,
             });
     
