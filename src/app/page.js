@@ -80,7 +80,6 @@ const Page = () => {
                     src={`https://www.google.com/maps/embed/v1/directions?key=${process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}&origin=${userLocation.latitude},${userLocation.longitude}&destination=hospital near me`}
                 ></iframe>
             )}
-            {/* <Carousel/> */}
             <Homepage/>
             <Articles/>
         </div>
