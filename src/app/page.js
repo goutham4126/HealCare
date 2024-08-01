@@ -11,7 +11,7 @@ const Page = () => {
           try {
             console.log("Loading OneSignal SDK...");
             await OneSignal.init({
-              appId: "00117022-da84-4bef-9613-cde6d4d4e4e2",
+              appId: process.env.ONE_SIGNAL,
               allowLocalhostAsSecureOrigin: true,
             });
     
