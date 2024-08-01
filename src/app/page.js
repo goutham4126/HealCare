@@ -2,9 +2,46 @@
 import Homepage from '@/components/Homepage';
 import React, { useEffect, useState } from 'react';
 import Articles from '@/components/Articles';
-import Carousel from '@/components/Carousel';
+import OneSignal from "react-onesignal";
 
 const Page = () => {
+
+    useEffect(() => {
+        const loadOneSignal = async () => {
+          try {
+            console.log("Loading OneSignal SDK...");
+            await OneSignal.init({
+              appId: "00117022-da84-4bef-9613-cde6d4d4e4e2",
+              allowLocalhostAsSecureOrigin: true,
+            });
+    
+            console.log("OneSignal has been successfully initialized.");
+            OneSignal.Slidedown.promptPush();
+          } catch (error) {
+            console.error("Error initializing OneSignal:", error);
+          }
+        };
+    
+        // Check if OneSignal SDK is already loaded
+        if (!window.OneSignal) {
+          const script = document.createElement('script');
+          script.src = "https://cdn.onesignal.com/sdks/OneSignalSDK.js";
+          script.async = true;
+          script.onload = loadOneSignal;
+          script.onerror = () => console.error("Error loading OneSignal SDK script.");
+          document.head.appendChild(script);
+        } else {
+          loadOneSignal();
+        }
+    
+        // Cleanup function
+        return () => {
+          console.log("Cleaning up OneSignal...");
+          // Optionally, you can call OneSignal.logout() if you need to clear the user session
+          // OneSignal.logout();
+        };
+      }, []);
+    
     const [userLocation, setUserLocation] = useState(null);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -51,3 +88,7 @@ const Page = () => {
 }
 
 export default Page;
+
+
+
+
